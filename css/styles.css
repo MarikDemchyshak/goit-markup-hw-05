@@ -80,7 +80,7 @@ body {
   margin: 0 auto;
 }
 
-/* HEADER */
+/* ----------HEADER---------- */
 .header-border {
   border-bottom: 1px solid var(--list-card-set);
 }
@@ -131,14 +131,27 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--logo-studio);
+  position: relative;
 }
 
-.header-menu:hover,
+/* .header-menu:hover,
 .header-menu:focus {
   color: var(--header-contact-color);
+} */
+
+.header-menu:hover::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  left: 0px;
+  top: 44px;
+  background: #404bbf;
+  border-radius: 2px;
+  position: absolute;
+  color: #404bbf;
 }
 
-/* MAILTO and TEL */
+/* ----------MAILTO and TEL---------- */
 .header-address {
   font-style: normal;
 }
@@ -163,7 +176,7 @@ body {
   color: var(--header-contact-color);
 }
 
-/* SECTION HERO BUTTON STUDIO */
+/* ----------SECTION HERO---------- */
 .hero {
   background-color: var(--logo-studio);
   background-image: var(--hero-gradient), url(../images/hero/hero.jpg);
@@ -214,7 +227,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* SECTION TWO */
+/* ----------SECTION TWO---------- */
 .section-two-margin {
   padding: 120px 0;
 }
@@ -284,7 +297,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* SECTION THREE */
+/* ----------SECTION THREE---------- */
 .section-two-three {
   padding-bottom: 120px;
 }
@@ -304,7 +317,7 @@ body {
   gap: 24px;
 }
 
-/* SECTION FOUR */
+/* ----------SECTION FOUR---------- */
 .section-four-background {
   background-color: var(--button-footer-text);
   padding: 120px 0;
@@ -382,7 +395,7 @@ body {
   fill: var(--button-footer-text);
 }
 
-/* SECTION FIVE */
+/* ----------SECTION FIVE---------- */
 .section-five-customers {
   padding-top: 123px;
   padding-bottom: 120px;
@@ -425,7 +438,7 @@ body {
   color: var(--header-contact-color);
 }
 
-/* BUTTON PORTFOLIO*/
+/* ----------BUTTON PORTFOLIO----------*/
 .button-list {
   padding-top: 96px;
   padding-bottom: 120px;
@@ -460,7 +473,7 @@ body {
   border: 1px solid var(--header-contact-color);
 }
 
-/* LIST PORTFOLIO */
+/* ----------LIST PORTFOLIO---------- */
 .card-set {
   display: flex;
   flex-wrap: wrap;
@@ -470,6 +483,31 @@ body {
 
 .item {
   width: calc((100% - 48px) / 3);
+}
+
+.container-overlow-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlow-text {
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--button-footer-text);
+  background-color: var(--logo-web);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-link:hover .section-overlow-text,
+.card-link:focus .section-overlow-text {
+  transform: translateY(0%);
 }
 
 .card-link:hover {
@@ -500,7 +538,7 @@ body {
   color: var(--color-body);
 }
 
-/* FOOTER */
+/* ----------FOOTER---------- */
 .footer-background {
   background-color: var(--logo-studio);
   padding: 100px 0;
